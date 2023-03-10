@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tech.PubController">
+    <tabs>
+        <Tab id="pubtap" fx:id="pub" text="Publisher">
+            <content>
+                <AnchorPane style="-fx-background-color: #ffffee;">
+                    <children>
+                        <Label id="broker" layoutX="21.0" layoutY="16.0" prefHeight="38.0" prefWidth="73.0" text="Broker" textAlignment="CENTER" />
+                        <Label layoutX="19.0" layoutY="60.0" prefHeight="30.0" prefWidth="76.0" text="Topic Name" textAlignment="CENTER" />
+                        <TextArea fx:id="mssgid" layoutX="13.0" layoutY="139.0" prefHeight="202.0" prefWidth="758.0" />
+                        <Label layoutX="14.0" layoutY="121.0" text="Message" />
+                        <Button fx:id="submitid" layoutX="58.0" layoutY="359.0" mnemonicParsing="false" text="Submit" textAlignment="CENTER" />
+                        <TextArea fx:id="puboutputID" layoutX="57.0" layoutY="425.0" prefHeight="109.0" prefWidth="720.0" />
+                        <Label layoutX="65.0" layoutY="404.0" text="Output" />
+                        <RadioButton fx:id="sslid" layoutX="42.0" layoutY="95.0" mnemonicParsing="false" text="SSL">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="checkssl" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="nonsslid" layoutX="114.0" layoutY="95.0" mnemonicParsing="false" text="Non-SSL" toggleGroup="$checkssl" />
+                        <TextField fx:id="brokerid" layoutX="95.0" layoutY="22.0" prefHeight="26.0" prefWidth="670.0" />
+                        <TextField fx:id="topicnameid" layoutX="95.0" layoutY="62.0" prefHeight="26.0" prefWidth="232.0" />
+                        <Label layoutX="345.0" layoutY="67.0" text="Schema URL" />
+                        <TextField fx:id="pubschemaID" layoutX="440.0" layoutY="62.0" prefHeight="26.0" prefWidth="327.0" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab id="contap" fx:id="con" text="Consumer">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #e2f5f5;">
+                    <children>
+                        <Label layoutX="19.0" layoutY="31.0" text="Broker" />
+                        <Label layoutX="4.0" layoutY="69.0" text="Topic Name" />
+                        <Button fx:id="startID" layoutX="55.0" layoutY="168.0" mnemonicParsing="false" text="Start" />
+                        <TextField fx:id="conbrokerID" layoutX="77.0" layoutY="27.0" prefHeight="26.0" prefWidth="692.0" />
+                        <TextField fx:id="contopicID" layoutX="77.0" layoutY="65.0" prefHeight="26.0" prefWidth="209.0" />
+                        <TextArea fx:id="conrecordID" layoutX="63.0" layoutY="210.0" prefHeight="334.0" prefWidth="719.0" />
+                        <RadioButton fx:id="consslID" layoutX="14.0" layoutY="111.0" mnemonicParsing="false" text="SSL">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="checksslconsumer" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="connonsslID" layoutX="77.0" layoutY="111.0" mnemonicParsing="false" text="Non-SSL" toggleGroup="$checksslconsumer" />
+                        <Label layoutX="303.0" layoutY="70.0" text="Schema URL" />
+                        <TextField fx:id="conschemaID" layoutX="387.0" layoutY="66.0" prefHeight="26.0" prefWidth="386.0" />
+                  <Label layoutX="167.0" layoutY="111.0" text="Consumer Group" />
+                  <TextField fx:id="congroupID" layoutX="278.0" layoutY="107.0" prefHeight="26.0" prefWidth="204.0" />
+                  <RadioButton fx:id="earliestID" layoutX="557.0" layoutY="111.0" mnemonicParsing="false" selected="true" text="earliest">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="autooffset" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="latestID" layoutX="629.0" layoutY="111.0" mnemonicParsing="false" text="latest" toggleGroup="$autooffset" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
